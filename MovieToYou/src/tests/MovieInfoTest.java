@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import org.junit.jupiter.api.Test;
+import components.Display;
+import components.MovieInfo;
 
 class MovieInfoTest {
 
@@ -21,7 +23,8 @@ class MovieInfoTest {
 		assertTrue(ps!=null);
 		// ps was also set with info from database.
 	}
-    Connection con = null;
+    
+	Connection con = null;
     ResultSet rs = null;
     PreparedStatement ps = null;
     public ResultSet getInfo(String s){

@@ -63,8 +63,8 @@ public class Display extends JFrame implements ActionListener{
       }  else{
           JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
       }
-    }catch(Exception ex){
-           JOptionPane.showMessageDialog(null, ex.getMessage() + "test");
+    } catch(Exception ex){
+           JOptionPane.showMessageDialog(null, ex.getMessage());
             }
     }
     

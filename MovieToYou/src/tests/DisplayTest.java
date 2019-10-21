@@ -34,8 +34,8 @@ class DisplayTest {
 	            JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	        }
 	      }catch(Exception ex){
-	             JOptionPane.showMessageDialog(null, ex.getMessage() + "test");
-	              }
+	             JOptionPane.showMessageDialog(null, ex.getMessage());
+	      }
 		 assertEquals(rate, "10");
 		 assertEquals(year, "1996");
 		 assertEquals(releaseDate,"Oct 15, 2018");	
