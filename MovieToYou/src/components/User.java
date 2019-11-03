@@ -5,13 +5,13 @@ import java.util.ArrayList;
 
 public class User {
 
-	//Display display;
+	Display display;
 	public User() {
-		//display = new Display();
+		display = new Display();
 	}
 	public void search(String input) throws SQLException {
-		ArrayList<String >movies = Application.listResults(input);
-		//display.displayMovieList(movies);
+		ArrayList<String> movies = Application.listResults(input);
+		display.displayMovies(movies);
 		for(String s: movies)
 			System.out.println(s);
 	}
