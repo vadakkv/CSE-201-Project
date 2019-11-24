@@ -11,16 +11,49 @@ import javax.swing.JOptionPane;
 
 public class Application {
 	 
+	public ArrayList<String> movieList;
 	
-	 
-     public ResultSet getMovieDetails(String title){
-         return getResultSet("select * from movies where movieId = " + title);
-     }
+	public Application() {
+		movieList = new ArrayList<String>();
+	}
+	public void setMovieList(ArrayList<String> MovieList) {
+		this.movieList = MovieList;
+	}
+	public ArrayList<String> getMovieList() {
+		return movieList;
+	}
+	
+	public Application(ArrayList<String> movieList) {
+		this.movieList = movieList;
+	}
+    public ArrayList<String> getMovieDetails(String title) throws SQLException{
+    	ResultSet rs = getResultSet("SELECT * FROM Movies WHERE title = '" + title +"'");
+    	ArrayList<String> mDetails = new ArrayList<String>();
+   	 	while(rs.next()) {
+   	 		System.out.println("Movie selected for details: "  + title);
+   	 		System.out.println("Data found in database is follows:");
+   	 		System.out.println(rs.getString("title"));
+   	 		System.out.println(rs.getInt("runTime"));
+   	 		System.out.println(rs.getString("rating"));
+   	 		System.out.println(rs.getString("mpaaRating"));
+   	 		System.out.println(rs.getString("releaseDate"));
+   	 		mDetails.add(rs.getString("title"));
+   	 		String runTime = rs.getInt("runTime") + ""; 
+   	 		mDetails.add(runTime);
+   	 		mDetails.add(rs.getString("rating"));
+   	 		mDetails.add(rs.getString("mpaaRating"));
+   	 		mDetails.add(rs.getString("releaseDate"));
+   	 	}
+		return mDetails;
+    	
+    }
      
-     static public ResultSet getMovies(String input) {
+     public static ResultSet getMovies(String input) {
     	 String sql = "SELECT title FROM Movies WHERE title LIKE '%" + input + "%'";
     	 return getResultSet(sql);
      }
+     
+     
      
      public static ArrayList<String> listResults(String input) throws SQLException {
     	 ResultSet movies = getMovies(input);
@@ -32,7 +65,7 @@ public class Application {
     	 return movieList;
      }
      
-     static public ResultSet getResultSet(String sql) {
+     public static ResultSet getResultSet(String sql) {
     	 /* 
     	 Username: HIyCHr9sq4
     	 Database name: HIyCHr9sq4
@@ -42,7 +75,6 @@ public class Application {
     	 Connection con = null;
          ResultSet rs = null;
          PreparedStatement ps = null;
-         
     	 try{
              Class.forName("com.mysql.cj.jdbc.Driver");
              con = DriverManager.getConnection("jdbc:mysql://remotemysql.com/HIyCHr9sq4","HIyCHr9sq4","QcvQ9fBLWp");

@@ -1,3 +1,4 @@
+package components;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.sql.SQLException;
@@ -16,6 +17,11 @@ class UserTester {
 		assertEquals(movies.get(0),"Wanted");
 		// the size should be 1
 		assertEquals(movies.size(),1);
+		// try another movie
+		movies = Application.listResults("Ant Man");
+		// now the movie info in the movie arraylist should be "Ant Man". 
+		assertEquals(movies.get(0),"Ant Man");
+	
 	}
 
 }
