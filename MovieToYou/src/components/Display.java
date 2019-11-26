@@ -105,7 +105,7 @@ public class Display extends JFrame {
 		  c.gridx = 0;
 		  c.gridy = 0;
     	  for(String s: movieList) {
-    		  //for(int i =0; i<25; i++) {for showing the scroll bar usage
+    		  //for(int i =0; i<25; i++) {//for showing the scroll bar usage
     		  c.gridy++;
     		  JButton tempBtn = new JButton(s);
     		  tempBtn.addActionListener(user);
@@ -117,88 +117,11 @@ public class Display extends JFrame {
     	  frame.add(scroll_pane, BorderLayout.CENTER);
     	  frame.validate();
     	  frame.repaint();
-    	  //frame.update(frame.getGraphics());
       }
       
 
       public static void main(String[] args){
     	  Display myDisplay = new Display();
     	  new User(myDisplay);
-    	  //new Display();
-    	  // make a display object
-    	  // pass in display object where needed
-    	  // application will probably need to take a parameter of type Display
-      }
-	
-
-    	
- 
- 
- 
+      } 
 }
-	
-
-
-
-
-
-
-/*JL_name = new JLabel("Enter Movie:");
-JL_name.setBounds(20, 20, 200, 20);
-JT_name = new JTextField(20);
-JT_name.setBounds(130, 20, 150, 20);
-btn_search = new JButton("Search");
-btn_search.setBounds(300, 20, 80, 20);
-btn_search.addActionListener(this);
-setVisible(true);
-setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-setLocationRelativeTo(null);
-setSize(500,500);
-
-setLayout(null);
-add(btn_search);
-add(JL_name);
-add(JT_name);
-*/
-//User.selectMovie();
-
-/*	
-MovieInfo f = new MovieInfo();
-ResultSet rs = null;
-String fn = "rate";
-String ln = "releaseDate";
-String ag = "year";
-
-rs = f.getInfo(JT_name.getText()); < - IMPORTANT LINE OF CODE
-try{
-  if(rs.next()){
-      JT_rate.setText(rs.getString("rate"));
-        JT_releaseDate.setText(rs.getString("releaseDate"));
-          JT_year.setText(rs.getString("year"));
-  }  else{
-      JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
-  }
-} catch(Exception ex){
-       JOptionPane.showMessageDialog(null, ex.getMessage());
-        } */
-/*JL_rate = new JLabel("Rate: ");
-JL_rate.setBounds(20, 50, 100, 20);
-JT_rate = new JTextField(20);
-JT_rate.setBounds(130, 50, 150, 20);
-JL_releaseDate = new JLabel("Release: ");
-JL_releaseDate.setBounds(20, 80, 100, 20);
-JT_releaseDate = new JTextField(20);
-JT_releaseDate.setBounds(130, 80, 150, 20);
-JL_year = new JLabel("Age: ");
-JL_year.setBounds(20, 110, 100, 20);
-JT_year = new JTextField(20);
-JT_year.setBounds(130, 110, 150, 20);
-*/
-//add(JL_rate);
-//add(JT_rate);
-//add(JL_releaseDate);
-//add(JT_releaseDate);
-//add(JL_year);
-//add(JT_year);
-
-//adds Gui elements on window
